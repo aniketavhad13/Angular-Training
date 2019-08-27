@@ -1,0 +1,43 @@
+<!--Structural directive using ngIf-->
+<h3>This example demostrate the use of *ngIf</h3>
+<p *ngIf="isVisible">
+  Expression is true and ngIf is true.
+  This paragraph is in the DOM.
+</p>
+
+<p *ngIf="!isVisible">
+  Expression is false and ngIf is false.
+  This paragraph is not in the DOM.
+</p>
+
+<!--ngIf with else using ng-template-->
+<!-- <p *ngIf="isVisible else otherContent">
+  Expression is true and ngIf is true.
+  This paragraph is in the DOM.
+</p>
+
+<ng-template #otherContent>
+  Expression is false and ngIf is false.
+  This paragraph is not in the DOM.
+</ng-template> -->
+
+<!--ngFor structural directive-->
+<h3 class="mt-4">This example demostrate the use of *ngFor</h3>
+<div class="col-md-4"> Months :
+  <select class="form-control" (change)="onChange($event)">
+    <option value=null>--Select month--</option>
+    <option *ngFor="let month of months" [value]="month">{{month}}</option>
+  </select>
+
+  <span class="mt-2">Selected Month is : <b>{{selectedMonth}}</b></span>
+</div>
+
+
+<!--ngSwitch structural directive-->
+<h3 class="mt-4">This example demostrate the use of ngSwitch</h3>
+<div class="mt-3" [ngSwitch]="emotion">
+  <p *ngSwitchCase="'happy'">I am Happy</p>
+  <p *ngSwitchCase="'sad'">I am Sad</p>
+  <p *ngSwitchCase="'confused'">I am Confused</p>
+  <p *ngSwitchDefault>I am nuetral</p>
+</div>

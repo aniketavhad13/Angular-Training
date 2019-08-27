@@ -1,0 +1,9 @@
+<div>
+
+  <label>Search : </label>&nbsp;
+  <input type="text" [(ngModel)]="filterText" placeholder="type here to search countries"/>
+
+  <ul class="ml-4">
+    <li *ngFor="let contry of countries | filter: filterText">{{contry}}</li>
+  </ul>
+</div>

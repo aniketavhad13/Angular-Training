@@ -1,0 +1,15 @@
+<div>
+  <p>
+    <span>First Number: <b>{{data[0]}}</b></span> &nbsp;&nbsp;
+    <span> Second Number: <b>{{data[1]}}</b></span>
+  </p>
+
+  <div>
+    Click on buttons to see the result
+    <div>
+      <button class="btn btn-primary" (click)="performOperation('+')">Add</button>&nbsp;&nbsp;
+      <button class="btn btn-info" (click)="performOperation('-')">Substract</button>&nbsp;&nbsp;
+      <button class="btn btn-warning" (click)="performOperation('*')">Multiply</button>
+    </div>
+  </div>
+</div>
