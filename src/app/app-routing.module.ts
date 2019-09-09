@@ -12,6 +12,8 @@ import { StructuralDirectiveComponent } from './components/directives/structural
 import { OneWayBindingComponent } from './components/bindings/one-way-binding/one-way-binding.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: 'lazy-load-module', pathMatch: 'full'},
+
   {path : 'one-way-binding', component: OneWayBindingComponent},
   {path : 'two-way-binding', component: TwoWayBindingComponent},
   {path : 'structural-directive', component: StructuralDirectiveComponent},

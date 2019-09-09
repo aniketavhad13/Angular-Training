@@ -1,3 +1,4 @@
+import { AuthService } from './../../../services/auth-service/auth.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,11 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  model: any = { };
+  model: any = {};
 
-  constructor() { }
+  constructor(private authService: AuthService) { }
 
   ngOnInit() {
+  }
+
+  onSubmit(form) {
+    if (!form.valid) {
+      alert('Username or Password is required');
+    } else {
+      this.authService.login(this.model).subscribe(success => {
+        console.log(success);
+      }
+      )
+
+    }
   }
 
 }

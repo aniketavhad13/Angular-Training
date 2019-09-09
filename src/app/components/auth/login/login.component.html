@@ -7,25 +7,22 @@
     <form class="needs-validation" #form="ngForm" (ngSubmit)="onSubmit(form)">
 
       <div class="form-group">
-        <label for="uname">Username:</label>
-        <input type="text" class="form-control" placeholder="Enter username" name="uname" #uname="ngModel" [(ngModel)]="model.uname"
-          required minlength="8">
-        <div class="text-danger" *ngIf="uname.invalid && uname.touched">
-          <div class="text-danger" *ngIf="uname.errors.required"> Please fill out this field.</div>
-          <div class="text-danger" *ngIf="uname.errors.minlength">Minium length should be
-            {{uname.errors.minlength.requiredLength}}</div>
+        <label for="username">Username:</label>
+        <input type="text" class="form-control" placeholder="Enter username" name="username" #username="ngModel" [(ngModel)]="model.username"
+          required>
+        <div class="text-danger" *ngIf="username.invalid && (username.touched || form.submitted)">
+          <div class="text-danger" *ngIf="username.errors.required"> Please fill out this field.</div>
+          <!-- <div class="text-danger" *ngIf="username.errors.minlength">Minium length should be
+            {{username.errors.minlength.requiredLength}}</div> -->
         </div>
       </div>
 
       <div class="form-group">
         <label for="pwd">Password:</label>
-        <!-- <input pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" type="password" class="form-control" placeholder="Enter password" name="pswd" #pswd="ngModel" [(ngModel)]="model.pswd" required minlength="8"> -->
-        <input type="password" class="form-control" placeholder="Enter password" name="pswd" #pswd="ngModel"
-          [(ngModel)]="model.pswd" required>
-        <div class="text-danger" *ngIf="pswd.invalid && (pswd.touched || form.submitted)">
-          <div class="text-danger" *ngIf="pswd.errors.required"> Please fill out this field. </div>
-          <!-- <div class="text-danger" *ngIf="pswd.errors.minlength">Minium length should be {{pswd.errors.minlength.requiredLength}}</div> -->
-          <!-- <div class="text-danger" *ngIf="pswd.errors.pattern">Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters</div>   -->
+        <input type="password" class="form-control" placeholder="Enter password" name="password" #password="ngModel"
+          [(ngModel)]="model.password" required>
+        <div class="text-danger" *ngIf="password.invalid && (password.touched || form.submitted)">
+          <div class="text-danger" *ngIf="password.errors.required"> Please fill out this field. </div>
         </div>
       </div>
 

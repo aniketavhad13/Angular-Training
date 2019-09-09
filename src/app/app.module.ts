@@ -2,6 +2,7 @@ import { SharedModule } from './shared/shared.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -36,6 +37,7 @@ import { DataSharingComponent } from './components/data-sharing/data-sharing.com
     FormsModule,
     BrowserModule,
     SharedModule,
+    HttpClientModule,
     AppRoutingModule
   ],
   providers: [],
