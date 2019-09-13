@@ -16,7 +16,12 @@ export class AuthService {
     params.append('password', loginData.password);
     params.append('grant_type', 'password');
 
-    return this.http.post(`authorize`, params.toString());
+    let headers = {
+      'Content-type': 'application/x-www-form-urlencoded',
+      'Authorization': 'Basic dmlzaGFsOnNlY3JldA=='
+    };
+
+    return this.http.post(`authorize`, params.toString(), headers);
   }
 
   

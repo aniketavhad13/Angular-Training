@@ -15,4 +15,8 @@ export class TemplateDrivenFormComponent implements OnInit {
     
   }
 
+  onSubmit(form) {
+    
+  }
+
 }

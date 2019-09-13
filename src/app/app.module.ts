@@ -17,6 +17,9 @@ import { CustomDirectiveComponent, CustomDirective } from './components/directiv
 import { DefaultPipeComponent } from './components/pipes/default-pipe/default-pipe.component';
 import { CustomPipeComponent, FilterPipe } from './components/pipes/custom-pipe/custom-pipe.component';
 import { DataSharingComponent } from './components/data-sharing/data-sharing.component';
+import { HomeLayoutComponent } from './layout/home-layout/home-layout.component';
+import { LoginLayoutComponent } from './layout/login-layout/login-layout.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +34,10 @@ import { DataSharingComponent } from './components/data-sharing/data-sharing.com
     DefaultPipeComponent,
     CustomDirective,
     FilterPipe,
-    DataSharingComponent
+    DataSharingComponent,
+    HomeLayoutComponent,
+    LoginLayoutComponent,
+    PageNotFoundComponent
   ],
   imports: [
     ReactiveFormsModule,
