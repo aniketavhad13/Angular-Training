@@ -1,5 +1,6 @@
+import { AuthGuard } from './guard/auth.guard';
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule, CanActivate } from '@angular/router';
 
 import { TwoWayBindingComponent } from './components/bindings/two-way-binding/two-way-binding.component';
 import { CustomDirectiveComponent } from './components/directives/custom-directive/custom-directive.component';
@@ -14,7 +15,7 @@ import { OneWayBindingComponent } from './components/bindings/one-way-binding/on
 const routes: Routes = [
   { path: '', redirectTo: 'lazy-load-module', pathMatch: 'full'},
 
-  {path : 'one-way-binding', component: OneWayBindingComponent},
+  { path: 'one-way-binding', component: OneWayBindingComponent, canActivate:[AuthGuard]},
   {path : 'two-way-binding', component: TwoWayBindingComponent},
   {path : 'structural-directive', component: StructuralDirectiveComponent},
   {path : 'custom-directive', component: CustomDirectiveComponent},

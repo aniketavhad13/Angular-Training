@@ -1,3 +1,4 @@
+import { CommonService } from './../../../shared/services/common.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -9,9 +10,21 @@ export class TwoWayBindingComponent implements OnInit {
 
   title: string = "Angular Training";
 
-  constructor() { }
+  constructor(private common: CommonService) { }
 
   ngOnInit() {
+  }
+
+  onButtonA(){
+    let random = Math.random();
+    console.log(random);
+    this.common.sharedData.next(random);
+  }
+
+  onButtonB(){
+    this.common.sharedData.subscribe(res =>{
+      console.log(res);
+    })
   }
 
 }

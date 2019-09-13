@@ -3,3 +3,9 @@
 <p myCustomDir>
   custom-directive works!
 </p>
+
+
+<h3>Input & Output Demo</h3>
+<app-structural-directive [data]="[10,10]" (addResult)="onResult($event)"></app-structural-directive>
+
+Result: {{result}}

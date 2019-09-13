@@ -7,9 +7,15 @@ import { Component, OnInit, Directive, ElementRef, HostListener } from '@angular
 })
 export class CustomDirectiveComponent implements OnInit {
 
+  result = 0;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onResult(evt){
+    this.result = evt;
   }
 
 }

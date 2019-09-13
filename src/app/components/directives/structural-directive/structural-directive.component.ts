@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-structural-directive',
   templateUrl: './structural-directive.component.html',
   styleUrls: ['./structural-directive.component.scss']
 })
-export class StructuralDirectiveComponent implements OnInit {
+export class StructuralDirectiveComponent implements OnInit, OnChanges {
 
   isVisible: boolean = true;
   months = ["January", "Feburary", "March", "April", "May",
@@ -15,13 +15,26 @@ export class StructuralDirectiveComponent implements OnInit {
   emotion: string = 'happy';
   selectedMonth: string = '';
 
+  @Input() data: any;
+  @Output() addResult = new EventEmitter();
+
   constructor() { }
 
   ngOnInit() {
+    
+  }
+
+  ngOnChanges(){
+    console.log(this.data);
   }
 
   onChange(event) {
       this.selectedMonth = event.target.value;
+  }
+
+  onAdd(){
+    let add = this.data[0] + this.data[1];
+    this.addResult.emit(add);
   }
 
 }
