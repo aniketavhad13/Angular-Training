@@ -23,6 +23,10 @@ export class LoginComponent implements OnInit {
     if (this.route.snapshot.queryParams['returnUrl']) {
       this.returnUrl = this.route.snapshot.queryParams['returnUrl']
     }
+
+    if(localStorage.getItem('access_token')){
+      this.router.navigate(['one-way-binding']);
+    }
   }
 
   onSubmit(form) {
